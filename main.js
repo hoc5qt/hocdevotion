@@ -25,7 +25,7 @@ function today() {
     if(currentUrl.indexOf('/?')){
         currentUrl = currentUrl.split('/?')[0];
     }
-    window.location.href = currentUrl +'?'+dtStr+'/?variant=zh-cn';
+    window.location.href = currentUrl +'?'+dtStr;
 }
 function go(dtStr, removeCurrentDate) {
     if(dtStr){
