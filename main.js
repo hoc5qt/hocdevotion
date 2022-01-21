@@ -29,9 +29,9 @@ function today() {
 }
 function go(dtStr, removeCurrentDate) {
     if(dtStr){
-        document.getElementById("currentDay").innerHTML = dtStr.replace('=', '');
-        document.title = "基督之家第五家QT讀經靈修 - " + dtStr.replace('=', '');
-        document.getElementById("iframeTag").src = "https://hocdevotion.org/event/" + dtStr +'/?variant=zh-cn';
+        document.getElementById("currentDay").innerHTML = dtStr.replace('=', '').replace('/','');
+        document.title = "基督之家第五家QT讀經靈修 - " + dtStr.replace('=', '').replace('/','');
+        document.getElementById("iframeTag").src = "https://hocdevotion.org/event/" + dtStr.replace('/','') +'/?variant=zh-cn';
     }else{
         var currentUrl = window.location.href;
         var current_time = new Date().getTime();
