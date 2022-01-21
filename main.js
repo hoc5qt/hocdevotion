@@ -11,6 +11,22 @@ function next() {
     go(null, true);
 }
 
+function today() {
+    var dt = new Date();
+
+    var yyyy = dt.getFullYear();
+    var month = dt.getMonth() + 1;
+    var day = dt.getDate();
+    var dtStr = yyyy + '-' + month + "-" + day;
+    document.getElementById("currentDay").innerHTML = dtStr.replace('=', '');
+    //document.getElementById("iframeTag").src = "https://hocdevotion.org/event/" + dtStr;
+    document.title = "基督之家第五家QT讀經靈修 - " + dtStr.replace('=', '');
+    var currentUrl = window.location.href;
+    if(currentUrl.indexOf('/?')){
+        currentUrl = currentUrl.split('/?')[0];
+    }
+    window.location.href = currentUrl +'?'+dtStr+'/?variant=zh-cn';
+}
 function go(dtStr, removeCurrentDate) {
     if(dtStr){
         document.getElementById("currentDay").innerHTML = dtStr.replace('=', '');
